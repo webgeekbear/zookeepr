@@ -4,13 +4,7 @@ const $displayArea = document.querySelector('#display-area');
 const printResults = resultArr => {
   console.log(resultArr);
 
-  const animalHTML = resultArr.map(({
-    id,
-    name,
-    personalityTraits,
-    species,
-    diet
-  }) => {
+  const animalHTML = resultArr.map(({ id, name, personalityTraits, species, diet }) => {
     return `
   <div class="col-12 col-md-5 mb-3">
     <div class="card p-3" data-id=${id}>
@@ -74,10 +68,7 @@ const handleGetAnimalsSubmit = event => {
 
   const personalityTraits = personalityTraitArr.join(',');
 
-  const animalObject = {
-    diet,
-    personalityTraits
-  };
+  const animalObject = { diet, personalityTraits };
 
   getAnimals(animalObject);
 };
